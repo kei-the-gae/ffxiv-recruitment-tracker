@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 HI  GUYS
+=======
+HIIIIIIIIIIIIIIIIII
+>>>>>>> 086615d9b37f4ec148db4c874bba5b9e829dd634
