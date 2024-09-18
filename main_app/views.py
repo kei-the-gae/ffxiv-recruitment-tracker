@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
@@ -35,3 +35,9 @@ def all_player_index(req):
 def my_player_index(req):
     players = Player.objects.filter(user=req.user)
     return render(req, 'users/index.html', {'players': players})
+
+def player_detail(req, player_id):
+    player = Player.objects.get(id=player_id)
+    return render(req, 'players/detail.html', {
+        'player': player,
+    })

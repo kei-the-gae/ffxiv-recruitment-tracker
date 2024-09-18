@@ -11,11 +11,13 @@
 <section class="player-container">
     {% for player in players %}
         <div class="box">
-            <div class="box-content">
-                <h2 class="box-title">{{ player.name }}</h2>
-                <p>Server: {{player.get_server_display}}</p>
-                <p>Role: {{player.get_role_display}}</p>
-            </div>
+            <a href="{% url 'player_detail' player.id %}">
+                <div class="box-content">
+                    <h2 class="box-title">{{ player.name }}</h2>
+                    <p>Server: {{player.get_server_display}}</p>
+                    <p>Role: {{player.get_role_display}}</p>
+                </div>
+            </a>
         </div>
     {% endfor %}
 </section>
