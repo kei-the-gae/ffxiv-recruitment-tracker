@@ -8,7 +8,7 @@ ROLES = (
     ('D', 'DPS')
 )
 
-SERVERS = ( 
+SERVERS = (
     ("01", "Adamantoise"),
     ("02", "Aegis"),
     ("03", "Alexander"),
@@ -92,6 +92,29 @@ SERVERS = (
     ("81", "Sagittarius")
 )
 
+JOBS = (
+    ('PLD', 'Paladin'),
+    ('WAR', 'Warrior'),
+    ('DRK', 'Dark Knight'),
+    ('GNB', 'Gunbreaker'),
+    ('WHM', 'White Mage'),
+    ('SCH', 'Scholar'),
+    ('AST', 'Astrologian'),
+    ('SGE', 'Sage'),
+    ('MNK', 'Monk'),
+    ('DRG', 'Dragoon'),
+    ('NIN', 'Ninja'),
+    ('SAM', 'Samurai'),
+    ('RPR', 'Reaper'),
+    ('VPR', 'Viper'),
+    ('BRD', 'Bard'),
+    ('MCH', 'Machinist'),
+    ('DNC', 'Dancer'),
+    ('BLM', 'Black Mage'),
+    ('SMN', 'Summoner'),
+    ('RDM', 'Red Mage'),
+    ('PCT', 'Pictomancer'),
+)
 
 class Player(models.Model):
     name = models.CharField(max_length=20)
@@ -106,6 +129,18 @@ class Player(models.Model):
         choices=ROLES,
         default=ROLES[0][0]
     )
-    
+
     def __str__(self):
         return f"{self.name} is a {self.get_role_display()} on {self.get_server_display()}"
+
+class Job(models.Model):
+    player = models.ForeignKey(Player, on_delete=models.CASCADE)
+    name = models.CharField(
+        max_length=3,
+        choices=JOBS,
+        default=JOBS[0][0]
+    )
+    description = models.TextField()
+
+    def __str__(self):
+        return f'{self.player}\'s {self.name}'
