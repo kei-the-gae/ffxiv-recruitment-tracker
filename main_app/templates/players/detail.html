@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/players/detail.css' %}">
+{% endblock %}
+{% block content %}
+
+<section class="player_container">
+    <div class="player_details">
+        <h1>{{ player.name }}</h1>
+        <h2>{{ user.username }}'s character on {{player.get_server_display}}</h2>
+        <h3>Role: {{player.get_role_display}}</h3>
+    </div>
+    <div class="job_details">
+        <ul>
+            {% for job in jobs %}
+            <li>
+                <h3> {{job.get_name_display}}</h3>
+                <h4>{{ job.description }}</h4>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+{% endblock %}
