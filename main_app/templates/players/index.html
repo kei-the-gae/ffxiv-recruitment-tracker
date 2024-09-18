@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/players/player_index.css' %}">
+{% endblock %}
+{% block content %}
+
+<section class="index-header">
+    <h1>All Players List</h1>
+</section>
+<section class="player-container">
+    {% for player in players %}
+        <div class="box">
+            <div class="box-content">
+                <h2 class="box-title">{{ player.name }}</h2>
+                <p>{{ user.username }}'s character on {{player.get_server_display}}</p>
+                <p>Role: {{player.get_role_display}}</p>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+
+{% endblock %}
