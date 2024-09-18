@@ -6,8 +6,8 @@
   }
   
   .box {
-    background-color: rgb(244, 231, 221);
-    color: rgba(65, 34, 25, 0.9);
+    background-color: #ffffff;
+    color: #0c2d4c;
     width: 275px;
     margin: 10px;
     border: var(--borders);
