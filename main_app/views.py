@@ -4,6 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
+from .models import Player
 
 
 # Create your views here.
@@ -26,3 +27,7 @@ def signup(request):
     form = UserCreationForm()
     context = {'form': form, 'error_message': error_message}
     return render(request, 'signup.html', context)
+
+def player_index(req):
+    players = Player.objects.all()
+    return render(req, 'players/index.html', {'players': players})
