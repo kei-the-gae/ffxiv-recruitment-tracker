@@ -22,7 +22,8 @@
         <ul>
           {% if user.is_authenticated %}
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'player_index' %}">All Players</a></li>
+          <li><a href="{% url 'all_player_index' %}">All Players</a></li>
+          <li><a href="{% url 'my_player_index' %}">My Players</a></li>
           <li>
             <form id="logout-form" method="post" action="{% url 'logout' %}">
               {% csrf_token %}
