@@ -1,0 +1,45 @@
+.player-container {
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .box {
+    background-color: rgb(244, 231, 221);
+    color: rgba(65, 34, 25, 0.9);
+    width: 275px;
+    margin: 10px;
+    border: var(--borders);
+    box-shadow: var(--card-box-shadow);
+  }
+
+  .box-img {
+    width: 100%;
+  }
+  
+  .box-content {
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .usr-img {
+    width: 100%;
+    border-radius: var(--card-border-radius);
+  }
+  
+  .box > a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  
+  .box h2 {
+    margin: 10px 0;
+    font-size: var(--font-xl);
+  }
+  
+  .box p {
+    margin: 5px 0;
+    font-size: var(--font-reg);
+  }
+  
