@@ -15,7 +15,7 @@
     <header>
       <div class="header-logo-container">
         <a href="/">
-          <img src="" alt="logo goes here" />
+          <img id="cactuar" src="{% static 'images/cactuar-icon.png' %}" alt="cactuar icon" />
         </a>
       </div>
       <nav>
@@ -30,6 +30,7 @@
             </form>
           </li>
           {% else %}
+          <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'home' %}">Sign In</a></li>
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
           {% endif %}
