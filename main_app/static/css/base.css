@@ -102,6 +102,10 @@ nav li {
   max-width: 500px;
 }
 
+#cactuar {
+  max-height: 100%;
+}
+
 .page-header {
   display: flex;
   align-items: center;
