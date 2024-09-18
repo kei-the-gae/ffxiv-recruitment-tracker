@@ -28,6 +28,10 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'signup.html', context)
 
-def player_index(req):
+def all_player_index(req):
     players = Player.objects.all()
     return render(req, 'players/index.html', {'players': players})
+
+def my_player_index(req):
+    players = Player.objects.filter(user=req.user)
+    return render(req, 'users/index.html', {'players': players})
