@@ -3,7 +3,9 @@ main {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    height: 100%;
+    height: 100vh;
+    background-image: url("../images/background.jpg");
+    background-position: absolute;
   }
   
   main > section {
@@ -15,10 +17,6 @@ main {
     flex-direction: column;
   }
   
-  .header-logo-container {
-    display: none;
-  }
-  
   .logo-container {
     max-width: 375px;
   }
@@ -28,7 +26,16 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 60%;
+    background-color: white;
+    background-size: 80%;
+    color: #0c2d4c;
+    width: 275px;
+    margin: 10px;
+    border: var(--borders);
+    box-shadow: var(--card-box-shadow);
+    padding: 10px;
+
   }
   
   .login h1 {
