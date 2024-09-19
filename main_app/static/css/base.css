@@ -49,7 +49,6 @@ body {
 
 header {
   width: 100%;
-  height: 10vh;
   background: var(--nav-bg-ff); /* rgba(104, 197, 248, .9) */
   border-bottom: var(--borders);
 }
@@ -228,49 +227,54 @@ nav li {
 }
 
 @media only screen and (min-width: 1024px) {
-  main {
-    min-height: calc(100vh - 55px);
+  header {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    top: 0;
+    align-items: center;
   }
 
-  header {
-    margin: 0px 20px;
-    width: calc(100vw - 40px);
-    max-width: 1920px;
-    top: 0px;
-    background-color: transparent;
-    border-bottom: none;
+  main {
+    max-width: 1300px;
+    min-height: calc(100vh - 53px);
   }
 
   nav,
   .header-logo-container {
-    margin: 0;
-    background: var(--nav-bg-ff);
-    border: var(--borders);
-    border-radius: 18px;
+    margin: 10px 0;
+    padding: 0 15px;
+  }
+
+  .header-logo-container {
+    padding-top: 3px;
   }
 
   nav {
     margin-left: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul {
+    flex-wrap: nowrap;
   }
 
   .header-logo-container {
-    padding-top: 6px;
-    width: 256px;
-    height: 35px;
+    width: 213px;
   }
 
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    header {
-      -webkit-backdrop-filter: none;
-      backdrop-filter: none;
-    }
+  .page-header h1 {
+    font-size: var(--font-xtreme);
+  }
 
-    nav,
-    .header-logo-container {
-      background: #9fc8f2;
-      -webkit-backdrop-filter: blur(3px);
-      backdrop-filter: blur(3px);
-    }
+  .page-header img {
+    height: 50px;
+    margin-left: 20px;
+  }
+
+  .page-header img:first-of-type {
+    margin-left: 25px;
   }
 }
 
