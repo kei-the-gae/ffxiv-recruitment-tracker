@@ -13,7 +13,7 @@
         <div class="box">
             <a href="{% url 'player_detail' player.id %}">
                 <div class="box-image">
-                    <img src="" alt="">
+                    <img id="box-image" src="{% static 'images/chocobo-placeholder.png' %}" alt="a happy chocobo" />
                 </div>
                 <div class="box-content">
                     <h2 class="box-title">{{ player.name }}</h2>

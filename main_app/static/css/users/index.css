@@ -14,7 +14,7 @@
     box-shadow: var(--card-box-shadow);
   }
 
-  .box-img {
+  #box-image {
     width: 100%;
   }
   
