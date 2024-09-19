@@ -2,24 +2,19 @@ html {
   box-sizing: border-box;
 }
 
-/* The Universal Selector */
-*, /* All elements*/
-*::before, /* All ::before pseudo-elements */
+*,
+*::before, 
 *::after {
-  /* All ::after pseudo-elements */
-  /* height & width will now include border & padding by default
-     but can be over-ridden as needed */
   box-sizing: inherit;
 }
 
-/* resets font size to be 62.5% of the user preference - 
-     in most browser configurations this will be 10px */
 :root {
   font-size: 62.5%;
 }
 
 body {
   margin: 0;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +92,7 @@ nav li {
 .header-logo-container {
   margin: auto;
   padding: 10px 20px 0;
-  /* max-width: 500px; */
+  max-width: 500px;
 }
 
 #cactuar {
