@@ -7,13 +7,13 @@
 
 <div class="page-header">
     {% if player %}
-    <h1>Edit {{ player.name }}</h1>
-  {% else %}
-    <h1>Add a Player</h1>
-  {% endif %}
+        <h1>Edit {{ player.name }}</h1>
+    {% else %}
+        <h1>Add a Player</h1>
+    {% endif %}
 </div>
 
-<form action="" method="post" class="form-container">
+<form action="" method="post" enctype="multipart/form-data" class="form-container">
     {% csrf_token %}
     <table>
         {{ form.as_table }}
