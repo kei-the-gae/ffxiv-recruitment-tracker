@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.urls import reverse
 
 ROLES = (
     ('T', 'Tank'),
@@ -132,6 +132,8 @@ class Player(models.Model):
 
     def __str__(self):
         return f"{self.name} is a {self.get_role_display()} on {self.get_server_display()}"
+    def get_absolute_url(self):
+        return reverse('player_detail', kwargs={'player_id': self.id})
 
 class Job(models.Model):
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
