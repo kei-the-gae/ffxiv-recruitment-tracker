@@ -118,6 +118,7 @@ JOBS = (
 
 class Player(models.Model):
     name = models.CharField(max_length=20)
+    player_img = models.ImageField(blank=True, null=True, upload_to='images/')
     server = models.CharField(
         max_length=2,
         choices=SERVERS,
@@ -129,6 +130,7 @@ class Player(models.Model):
         choices=ROLES,
         default=ROLES[0][0]
     )
+    contact = models.CharField()
 
     def __str__(self):
         return f"{self.name} is a {self.get_role_display()} on {self.get_server_display()}"
