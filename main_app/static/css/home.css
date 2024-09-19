@@ -35,6 +35,7 @@ main {
     border: var(--borders);
     box-shadow: var(--card-box-shadow);
     padding: 10px;
+    border-radius: 5%;
 
   }
   
