@@ -49,7 +49,7 @@ def my_player_index(req):
 def player_detail(req, player_id):
     player = Player.objects.get(id=player_id)
     jobs = Job.objects.filter(player=player)
-    job_form = JobForm() 
+    job_form = JobForm()
     return render(req, 'players/detail.html', {
         'player': player,
         'jobs': jobs,
@@ -64,6 +64,9 @@ def add_job(request, player_id):
         new_job.save()
     return redirect('player_detail', player_id=player_id)
 
+class JobUpdate(UpdateView):
+    model = Job
+    fields = ['name', 'description']
 
 class PlayerCreate(LoginRequiredMixin, CreateView):
     model = Player
@@ -80,4 +83,3 @@ class PlayerUpdate(UpdateView):
 class PlayerDelete(DeleteView):
     model = Player
     success_url = '/players/'
-

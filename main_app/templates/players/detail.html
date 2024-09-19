@@ -31,6 +31,9 @@
                 <li>
                     <h3> {{job.get_name_display}}</h3>
                     <h4>{{ job.description }}</h4>
+                    <div class="cat-actions">
+                        <a href="{% url 'job_update' job.id %}" class="btn warn">Edit</a>
+                    </div>
                 </li>
                 {% endfor %}
             {% else %}
