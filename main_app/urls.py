@@ -9,5 +9,6 @@ urlpatterns = [
     path('players/', views.all_player_index, name='all_player_index'),
     path('players/<int:player_id>/', views.player_detail, name='player_detail'),
     path('players/create/', views.PlayerCreate.as_view(), name='player_create'),
-
+    path('player/<int:pk>/update', views.PlayerUpdate.as_view(), name='player_update'),
+     path('player/<int:pk>/delete', views.PlayerDelete.as_view(), name='player_delete'),
 ]

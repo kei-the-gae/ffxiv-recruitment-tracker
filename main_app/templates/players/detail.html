@@ -20,6 +20,10 @@
             </li>
             {% endfor %}
         </ul>
+        <div class="player-actions">
+            <a href="{% url 'player_update' player.id %}" class="btn warn">Edit</a>
+            <a href="{% url 'player_delete' player.id %}" class="btn danger">Delete</a>
+          </div>
     </div>
 </section>
 

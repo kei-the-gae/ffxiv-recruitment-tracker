@@ -8,7 +8,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Player, Job
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
-
 # Create your views here.
 class Home(LoginView):
     template_name = 'home.html'
@@ -62,3 +61,10 @@ class PlayerCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
+class PlayerUpdate(UpdateView):
+    model = Player
+    fields = ['name', 'server','role']
+
+class PlayerDelete(DeleteView):
+    model = Player
+    success_url = '/players/'
