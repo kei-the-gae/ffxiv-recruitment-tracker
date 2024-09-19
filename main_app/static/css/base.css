@@ -1,5 +1,3 @@
-/* static/css/base.css  */
-
 html {
   box-sizing: border-box;
 }
@@ -51,6 +49,7 @@ body {
 
 header {
   width: 100%;
+  height: 10vh;
   background: var(--nav-bg-ff); /* rgba(104, 197, 248, .9) */
   border-bottom: var(--borders);
 }
@@ -99,7 +98,7 @@ nav li {
 .header-logo-container {
   margin: auto;
   padding: 10px 20px 0;
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
 #cactuar {
@@ -188,7 +187,6 @@ nav li {
     padding: 0 15px;
   }
 
-  /* visual fix to help align logo */
   .header-logo-container {
     padding-top: 3px;
   }
@@ -235,10 +233,10 @@ nav li {
   }
 
   header {
-    margin: 20px 20px 0 20px;
+    margin: 0px 20px;
     width: calc(100vw - 40px);
     max-width: 1920px;
-    top: 20px;
+    top: 0px;
     background-color: transparent;
     border-bottom: none;
   }
@@ -256,7 +254,6 @@ nav li {
   }
 
   .header-logo-container {
-    /* visual fix to help align logo */
     padding-top: 6px;
     width: 256px;
     height: 35px;
