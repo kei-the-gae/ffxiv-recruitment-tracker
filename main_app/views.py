@@ -6,6 +6,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Player, Job
+from .forms import JobForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Create your views here.
@@ -48,9 +49,11 @@ def my_player_index(req):
 def player_detail(req, player_id):
     player = Player.objects.get(id=player_id)
     jobs = Job.objects.filter(player=player)
+    job_form = JobForm() 
     return render(req, 'players/detail.html', {
         'player': player,
-        'jobs': jobs
+        'jobs': jobs,
+        'job_form' : job_form,
     })
 
 class PlayerCreate(LoginRequiredMixin, CreateView):
@@ -68,3 +71,7 @@ class PlayerUpdate(UpdateView):
 class PlayerDelete(DeleteView):
     model = Player
     success_url = '/players/'
+
+class JobCreate(CreateView):
+    model = Job
+    fields = ['name','description']
