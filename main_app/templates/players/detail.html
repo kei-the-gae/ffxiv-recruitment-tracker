@@ -13,30 +13,34 @@
     </div>
 
     <h3>Add a Job</h3>
-    <form 
+    <form
     action="{% url 'add_job' player.id %}"
-    method="post" 
-    class="subsection-content" 
+    method="post"
+    class="subsection-content"
     autocomplete="off"
     >
-        {% csrf_token %} 
+        {% csrf_token %}
         {{ job_form.as_p }}
         <button type="submit" class="btn submit">Add Job</button>
     </form>
 
     <div class="job_details">
         <ul>
-            {% for job in jobs %}
-            <li>
-                <h3> {{job.get_name_display}}</h3>
-                <h4>{{ job.description }}</h4>
-            </li>
-            {% endfor %}
+            {% if jobs %}
+                {% for job in jobs %}
+                <li>
+                    <h3> {{job.get_name_display}}</h3>
+                    <h4>{{ job.description }}</h4>
+                </li>
+                {% endfor %}
+            {% else %}
+                <p>⚠️ {{player.name}} has no jobs yet!</p>
+            {% endif %}
         </ul>
         <div class="player-actions">
             <a href="{% url 'player_update' player.id %}" class="btn warn">Edit</a>
             <a href="{% url 'player_delete' player.id %}" class="btn danger">Delete</a>
-          </div>
+        </div>
     </div>
 </section>
 
