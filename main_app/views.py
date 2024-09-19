@@ -60,8 +60,8 @@ def player_detail(req, player_id):
     })
 
 @login_required
-def add_job(request, player_id):
-    form = JobForm(request.POST)
+def add_job(req, player_id):
+    form = JobForm(req.POST)
     if form.is_valid():
         new_job = form.save(commit=False)
         new_job.player_id = player_id
