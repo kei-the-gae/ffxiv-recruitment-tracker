@@ -30,6 +30,7 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'signup.html', context)
 
+@login_required
 def all_player_index(req):
     players = Player.objects.all()
     jobs = Job.objects.filter(player__in=players)
@@ -38,6 +39,7 @@ def all_player_index(req):
         'jobs': jobs
     })
 
+@login_required
 def my_player_index(req):
     players = Player.objects.filter(user=req.user)
     jobs = Job.objects.filter(player__in=players)
@@ -46,6 +48,7 @@ def my_player_index(req):
         'jobs': jobs
     })
 
+@login_required
 def player_detail(req, player_id):
     player = Player.objects.get(id=player_id)
     jobs = Job.objects.filter(player=player)
@@ -56,6 +59,7 @@ def player_detail(req, player_id):
         'job_form' : job_form,
     })
 
+@login_required
 def add_job(request, player_id):
     form = JobForm(request.POST)
     if form.is_valid():
@@ -64,7 +68,7 @@ def add_job(request, player_id):
         new_job.save()
     return redirect('player_detail', player_id=player_id)
 
-class JobUpdate(UpdateView):
+class JobUpdate(LoginRequiredMixin, UpdateView):
     model = Job
     fields = ['name', 'description']
 
@@ -76,10 +80,10 @@ class PlayerCreate(LoginRequiredMixin, CreateView):
         form.instance.user = self.request.user
         return super().form_valid(form)
 
-class PlayerUpdate(UpdateView):
+class PlayerUpdate(LoginRequiredMixin, UpdateView):
     model = Player
     fields = ['name', 'server','role']
 
-class PlayerDelete(DeleteView):
+class PlayerDelete(LoginRequiredMixin, DeleteView):
     model = Player
     success_url = '/my_players/'
