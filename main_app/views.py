@@ -4,8 +4,9 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Player
-
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Create your views here.
 class Home(LoginView):
@@ -35,3 +36,11 @@ def all_player_index(req):
 def my_player_index(req):
     players = Player.objects.filter(user=req.user)
     return render(req, 'users/index.html', {'players': players})
+
+class PlayerCreate(LoginRequiredMixin, CreateView):
+    model = Player
+    fields = ['name', 'server', 'role']
+    success_url = '/players/'
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
