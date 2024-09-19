@@ -6,6 +6,7 @@ main {
     height: 100vh;
     background-image: url("../images/background.jpg");
     background-position: absolute;
+    background-repeat: no-repeat;
   }
   
   main > section {
