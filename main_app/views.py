@@ -71,7 +71,7 @@ class JobUpdate(UpdateView):
 class PlayerCreate(LoginRequiredMixin, CreateView):
     model = Player
     fields = ['name', 'server', 'role']
-    success_url = '/players/'
+    success_url = '/my_players/'
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
@@ -82,4 +82,4 @@ class PlayerUpdate(UpdateView):
 
 class PlayerDelete(DeleteView):
     model = Player
-    success_url = '/players/'
+    success_url = '/my_players/'
