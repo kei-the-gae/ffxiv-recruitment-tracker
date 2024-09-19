@@ -6,7 +6,11 @@
 {% block content %}
 
 <div class="page-header">
+    {% if player %}
+    <h1>Edit {{ player.name }}</h1>
+  {% else %}
     <h1>Add a Player</h1>
+  {% endif %}
 </div>
 
 <form action="" method="post" class="form-container">
