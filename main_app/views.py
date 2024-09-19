@@ -56,6 +56,15 @@ def player_detail(req, player_id):
         'job_form' : job_form,
     })
 
+def add_job(request, player_id):
+    form = JobForm(request.POST)
+    if form.is_valid():
+        new_job = form.save(commit=False)
+        new_job.player_id = player_id
+        new_job.save()
+    return redirect('player_detail', player_id=player_id)
+
+
 class PlayerCreate(LoginRequiredMixin, CreateView):
     model = Player
     fields = ['name', 'server', 'role']
@@ -72,6 +81,3 @@ class PlayerDelete(DeleteView):
     model = Player
     success_url = '/players/'
 
-class JobCreate(CreateView):
-    model = Job
-    fields = ['name','description']

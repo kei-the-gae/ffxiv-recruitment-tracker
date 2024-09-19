@@ -11,5 +11,5 @@ urlpatterns = [
     path('players/create/', views.PlayerCreate.as_view(), name='player_create'),
     path('player/<int:pk>/update', views.PlayerUpdate.as_view(), name='player_update'),
     path('player/<int:pk>/delete', views.PlayerDelete.as_view(), name='player_delete'),
-    path('jobs/create/', views.JobCreate.as_view(), name='job_create'),
+    path('players/<int:player_id>/add-job/', views.add_job, name='add_job'),
 ]
