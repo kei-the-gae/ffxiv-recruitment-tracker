@@ -147,4 +147,4 @@ class Job(models.Model):
     def __str__(self):
         return f'{self.player}\'s {self.name}'
     def get_absolute_url(self):
-        return reverse('player_detail', kwargs={'player_id': self.id})
+        return reverse('player_detail', kwargs={'player_id': self.player.id})
