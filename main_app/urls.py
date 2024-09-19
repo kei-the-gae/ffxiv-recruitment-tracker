@@ -7,5 +7,7 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
     path('my_players/', views.my_player_index, name='my_player_index'),
     path('players/', views.all_player_index, name='all_player_index'),
+    path('players/<int:player_id>/', views.player_detail, name='player_detail')
     path('players/create/', views.PlayerCreate.as_view(), name='player_create'),
+
 ]
