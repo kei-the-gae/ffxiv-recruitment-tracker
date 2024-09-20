@@ -2,6 +2,7 @@ main {
     display: flex;
     flex-direction: row;
     color:#0c2d4c;
+    flex-wrap: wrap;
 
 }
 
@@ -12,6 +13,7 @@ main {
     align-items: center;
     justify-content: center;
     max-width: 500px;
+    align-content: center;
   }
   
   .player_img {
@@ -22,16 +24,21 @@ main {
   
   .player_details {
     align-self: center;
+    text-align: center;
     width: 98%;
   }
-  
-  .player_actions {
-    margin-top: 20px;
+
+  #role {
+    text-align: left;
+  }
+
+  #contact {
+    text-align: left;
+    margin-bottom: 20px;
   }
 
 .job_container {
     padding: 35px 30px;
-    width: 100%;
     max-width: 800px;
     margin: 20px;
     display: flex;
