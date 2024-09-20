@@ -70,3 +70,14 @@ td > textarea {
     align-self: flex-end;
     margin-right: 40px;
 }
+
+@media only screen and (max-width: 768px) {
+    .img-container {
+        display: none;
+    }
+
+    .form-container {
+        flex: 1;
+        width: 100%;
+    }
+}
