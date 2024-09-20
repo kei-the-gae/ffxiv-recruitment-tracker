@@ -1,24 +1,32 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block head %}
-{% comment %} <link rel="stylesheet" href="{% static 'css/form.css' %}" /> {% endcomment %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
 {% endblock %}
 {% block content %}
 
-<div class="page-header">
-    {% if player %}
-        <h1>Edit {{ player.name }}</h1>
-    {% else %}
-        <h1>Add a Player</h1>
-    {% endif %}
-</div>
+<div class="content-wrap">
+    <div class="img-container">
+        <img src="{% static 'images/form-background.webp'%}" alt="Form background image">
+    </div>
 
-<form action="" method="post" enctype="multipart/form-data" class="form-container">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <button type="submit" class="btn submit">Submit!</button>
-</form>
+    <div class="form-container">
+        <div class="page-header">
+            {% if player %}
+                <h1>Edit {{ player.name }}</h1>
+            {% else %}
+                <h1>Add a Player</h1>
+            {% endif %}
+        </div>
+
+        <form action="" method="post" enctype="multipart/form-data" class="form">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <button type="submit" class="btn submit">Submit!</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
