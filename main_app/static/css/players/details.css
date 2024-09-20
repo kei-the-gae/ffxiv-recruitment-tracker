@@ -11,21 +11,32 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     max-width: 500px;
     align-content: center;
+    margin: 20px;
+    padding-bottom: 20px;
   }
-  
+
   .player_img {
     width: 75%;
     max-width: 350px;
     border-radius: var(--card-border-radius);
   }
-  
+
   .player_details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
     align-self: center;
     text-align: center;
-    width: 98%;
+    width: 100%;
+  }
+
+  .player_info {
+    display: flex;
+    flex-direction: column;
   }
 
   #role {
@@ -50,7 +61,7 @@ main {
   #editjob {
     justify-self: right;
   }
-  
+
   .subsection-title {
     display: flex;
     font-size: large;
@@ -60,12 +71,12 @@ main {
   #add_title {
     margin: 0;
   }
-  
+
   .subsection-content {
     padding: 0;
     margin: 0 8px;
   }
-  
+
   textarea {
     width: 100%;
     height: 100px;
@@ -77,43 +88,43 @@ main {
     width: 25px;
     margin-right: 10px;
   }
-  
+
   .no-jobs,
   .all-jobs {
     margin: 0;
     font-weight: bold;
   }
-  
+
   .no-jobs {
     color: var(--danger);
   }
-  
+
   .all-jobs {
     color: var(--submit);
   }
-  
+
   .player_details h1 {
     font-size: var(--font-xxl);
     margin: 15px 0 3px;
   }
-  
+
   .player_details h2 {
     font-size: var(--font-xl);
     margin: 0 0 10px;
     margin-top: 0;
     margin-bottom: 10px;
   }
-  
+
   .player_details h3 {
     margin: 20px 0 10px;
     font-size: var(--font-l);
   }
-  
+
   .player_details p {
     font-size: var(--font-reg);
     margin: 5px 0;
   }
-  
+
   .job_container > section {
     width: 80%;
     min-width: 360px;
@@ -126,114 +137,126 @@ main {
     justify-content: center;
     margin-bottom: 20px;
   }
-  
+
   .subsection-title img {
     height: 42px;
     margin-left: 8px;
   }
-  
+
   .subsection-title img:first-of-type {
     margin-left: 16px;
   }
-  
+
   .jobs h2 {
     font-size: 3.2rem;
     margin: 0;
   }
-  
+
   .jobs h3 {
     font-size: var(--font-xl);
     margin: 10px 0;
   }
-  
+
   .subsection-content p,
   .subsection-content input,
   .subsection-content select {
     font-size: var(--font-l);
   }
-  
+
   .subsection-content input,
   .subsection-content select {
     margin-left: 5px;
     padding: 3px;
   }
-  
+
   table {
     width: calc(100% - 16px);
     text-align: left;
     border-collapse: collapse;
     margin: 0 8px;
   }
-  
+
   .jobs td {
     padding: 8px 5px;
     font-size: var(--font-reg);
   }
-  
+
   .jobs th {
     font-size: var(--font-l);
     padding: 5px 5px 0;
     border-bottom: rgb(36, 116, 248) solid 2px;
   }
-  
+
   .jobs tr:nth-child(even) {
     background-color: #f3f3fd;
   }
-  
+
   .jobs_container p {
     margin: 12px 0;
   }
-  
+
   .jobs_container a {
     text-decoration: none;
     color: #111;
   }
-  
+
   .jobs_container .btn {
     padding: 3px 10px;
     margin-left: 10px;
     justify-content: right;
   }
-  
+
   #file-input {
     overflow: hidden;
     position: absolute;
     width: 0.1px;
     height: 0.1px;
   }
-  
+
   #file-name {
     margin-bottom: 10px;
   }
-  
-  @media only screen and (min-width: 768px) {
+
+  @media only screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
     .player_container {
       padding: 35px 30px;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       justify-content: start;
     }
-  
+
     .player_img {
       width: 25%;
       max-width: 250px;
       margin-right: 25px;
     }
-  
+
     .jobs-container {
       flex-direction: row;
       justify-content: space-around;
       align-items: flex-start;
     }
-  
+
     .jobs-container > section {
       width: 45%;
     }
   }
-  
-  @media only screen and (min-width: 1024px) {
+
+  @media only screen and (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
     .jobs-container {
       padding: 0 40px;
     }
   }
-  
