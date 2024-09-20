@@ -1,0 +1,50 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    height: 100vh;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+  .about-header {
+    font-size: 5rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    width: fit-content;
+    height: fit-content;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .about {
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    max-width: 500px;
+    padding: 10px;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 1.5em;
+  }
+
+  .about ul {
+    padding: 20px;
+    list-style: square;
+  }
+
+  
+  @media only screen and (min-width: 768px) {
+    main {
+      justify-content: flex-start;
+    }
+  
+    main > section {
+      width: 40%;
+    }
+
+  }
+  

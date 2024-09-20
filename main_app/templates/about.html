@@ -1,15 +1,22 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block head %}
-{% comment %} <link rel="stylesheet" href="{% static 'css/form.css' %}" /> {% endcomment %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}" />
 {% endblock %} 
 {% block content %}
   <body>
-    <h1>About</h1>
+    <h1 class="about-header">About</h1>
+    <div class="about">
     <p>
       The FFXIV Recruitment Tracker is an app designed for people that want to take
       part in group content but don't know where to look.
+      <ul>
+        <li><b>Community Focused:</b> Become part of a friendly, active group of adventurers dedicated to exploring Eorzea together.</li>
+        <li><b>All Playstyles Welcome:</b> Whether you're a seasoned raider, casual player, or crafting enthusiast, there's a place for you here.</li>
+        <li><b>Easy Access:</b> Create a libary of your own players and browse through our community of players to see who you can recruit!</li>
+      </ul>
     </p>
+  </div>
   </body>
 </html>
 {% endblock %}
