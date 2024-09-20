@@ -2,8 +2,15 @@ main {
   background-color: rgba(255, 255, 255, 0.8);
   background-image: url("../../images/jobs-icons.png");
   background-repeat: repeat;
-  background-size: 500px;
   background-blend-mode: lighten;
+  color: #0c2d4c;
+}
+
+.index-header {
+  font-size: 5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: fit-content;
+  height: fit-content;
 }
 
 .player-container {
