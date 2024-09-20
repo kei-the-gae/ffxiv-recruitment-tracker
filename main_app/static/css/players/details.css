@@ -1,9 +1,17 @@
+main {
+    display: flex;
+    flex-direction: row;
+    color:#0c2d4c;
+
+}
+
 .player_container {
     padding: 35px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-width: 500px;
   }
   
   .player_img {
@@ -13,30 +21,49 @@
   }
   
   .player_details {
+    align-self: center;
     width: 98%;
   }
   
   .player_actions {
     margin-top: 20px;
   }
-  
-  .jobs_container {
+
+.job_container {
+    padding: 35px 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
     align-items: center;
   }
+
+  #editjob {
+    justify-self: right;
+  }
   
   .subsection-title {
     display: flex;
-    align-items: center;
-    margin-bottom: 12px;
+    font-size: large;
+    height: fit-content;
+  }
+
+  #add_title {
+    margin: 0;
   }
   
   .subsection-content {
+    padding: 0;
     margin: 0 8px;
   }
   
+  textarea {
+    width: 100%;
+    height: 100px;
+  }
+
   .color-block {
     opacity: 0.8;
     height: 25px;
@@ -158,6 +185,7 @@
   .jobs_container .btn {
     padding: 3px 10px;
     margin-left: 10px;
+    justify-content: right;
   }
   
   #file-input {
