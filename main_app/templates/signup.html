@@ -1,22 +1,30 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block head %}
-{% comment %} <link rel="stylesheet" href="{% static 'css/form.css' %}" /> {% endcomment %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}" />
 {% endblock %} 
 {% block content %}
-<div class="page-header">
-  <h1>Sign Up</h1>
-  <img src="{% static 'images/moogle-icon.png' %}" alt="moogle icon" />
+
+<div class="content-wrap">
+  <div class="img-container">
+    <img src="{% static 'images/form-background.webp'%}" alt="Form background image">
+  </div>
+  <div class="form-container">
+    <div class="page-header">
+      <h1>Sign Up</h1>
+      <img src="{% static 'images/moogle-icon.png' %}" alt="moogle icon" />
+    </div>
+    {% if error_message %}
+      <p class="red-text">{{ error_message }}</p>
+    {% endif %}
+    <form action="" method="post" class="form" autocomplete="off">
+      {% csrf_token %}
+      <table>
+        {{ form.as_table }}
+      </table>
+      <button type="submit" class="btn submit">Submit!</button>
+    </form>
+  </div>
 </div>
-{% if error_message %}
-  <p class="red-text">{{ error_message }}</p>
-{% endif %}
-<form action="" method="post" class="form-container" autocomplete="off">
-  {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-  </table>
-  <button type="submit" class="btn submit">Submit!</button>
-</form>
 
 {% endblock %}
