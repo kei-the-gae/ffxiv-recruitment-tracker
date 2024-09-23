@@ -15,7 +15,7 @@
             <a href="{% url 'player_detail' player.id %}">
                 <div class="box-image">
                     {% if player.player_img %}
-                        <img src="{% cropped_thumbnail player "cropping" %}" alt="player uploaded image" />
+                        <img src="{% cropped_thumbnail player "cropping" %}" alt="player uploaded image" style="width: 271px; height:271px"/>
                     {% else %}
                         <img id="box-image" src="{% static 'images/chocobo-placeholder.png' %}" alt="a happy chocobo" />
                     {% endif %}
