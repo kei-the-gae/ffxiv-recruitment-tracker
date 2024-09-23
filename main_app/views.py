@@ -74,7 +74,7 @@ class JobUpdate(LoginRequiredMixin, UpdateView):
 
 class PlayerCreate(LoginRequiredMixin, CreateView):
     model = Player
-    fields = ['name', 'player_img', 'server', 'role', 'contact']
+    fields = ['name', 'server', 'role', 'contact']
     success_url = '/my_players/'
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -82,7 +82,7 @@ class PlayerCreate(LoginRequiredMixin, CreateView):
 
 class PlayerUpdate(LoginRequiredMixin, UpdateView):
     model = Player
-    fields = ['name', 'player_img', 'server','role', 'contact']
+    fields = ['name', 'player_img', 'cropping', 'server','role', 'contact']
 
 class PlayerDelete(LoginRequiredMixin, DeleteView):
     model = Player
