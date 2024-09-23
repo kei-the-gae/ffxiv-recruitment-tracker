@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cropping %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/players/index.css' %}">
 {% endblock %}
@@ -14,7 +15,7 @@
             <a href="{% url 'player_detail' player.id %}">
                 <div class="box-image">
                     {% if player.player_img %}
-                        <img src="{{ player.player_img.url }}" alt="player uploaded image" />
+                        <img src="{% cropped_thumbnail player "cropping" %}" alt="player uploaded image" />
                     {% else %}
                         <img id="box-image" src="{% static 'images/chocobo-placeholder.png' %}" alt="a happy chocobo" />
                     {% endif %}
