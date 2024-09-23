@@ -9,13 +9,13 @@
 <section class="player_container">
     <div class="player_details">
         <h1>{{ player.name }}</h1>
-    {% if player.player_img %}
-        <img src="{% cropped_thumbnail player "cropping" %}" alt="player uploaded image" />
-    {% else %}
-        <img id="box-image" src="{% static 'images/chocobo-placeholder.png' %}" alt="a happy chocobo" />
-    {% endif %}
-    <div class="player_info">
-        <h2>{{ player.user }}'s character on {{player.get_server_display}}</h2>
+        <div class="player_info">
+            <h2>{{ player.user }}'s character on {{player.get_server_display}}</h2>
+            {% if player.player_img %}
+                <img src="{% cropped_thumbnail player "cropping" %}" alt="player uploaded image" />
+            {% else %}
+                <img id="box-image" src="{% static 'images/chocobo-placeholder.png' %}" alt="a happy chocobo" />
+            {% endif %}
         <h3 id="role">Role: {{player.get_role_display}}</h3>
         <h3 id="contact">Contact Information: {{ player.contact }}</h3>
         {% if player.user == request.user %}
