@@ -10,6 +10,7 @@ python-dotenv = "*"
 whitenoise = "*"
 gunicorn = "*"
 dj-database-url = "*"
+easy-thumbnails = "*"
 
 [dev-packages]
 
