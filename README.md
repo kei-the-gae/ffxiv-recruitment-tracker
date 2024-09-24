@@ -47,12 +47,15 @@
   <a href="https://ffxiv-recruitment-tracker-f57ab5de9bef.herokuapp.com/"
     >FFXIV: Recruitment Tracker</a
   >
+  *Upon deployment, the factor for uploading user images in Django found conflict with Heroku in storing the data. Future iterations will work to fix this issue.
 </details>
 
 ## :construction: Upcoming Features
 
-- :white_square_button: Community Hub, allow users to see other user's players
+:white_square_button: Have full user image upload functionality when deployed
 
-- :white_square_button: Communication between users for ease of recruitment
+:white_square_button: Community Hub, allow users to see other user's players
 
-- :white_square_button: User Profiles to display their player's and stats
+:white_square_button: Communication between users for ease of recruitment
+
+:white_square_button: User Profiles to display their player's and stats
