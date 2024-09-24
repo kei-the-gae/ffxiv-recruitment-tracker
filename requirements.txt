@@ -1,0 +1,14 @@
+asgiref==3.8.1
+dj-database-url==2.2.0
+Django==5.1.1
+django-appconf==1.0.6
+django-image-cropping==1.7
+easy-thumbnails==2.10
+gunicorn==23.0.0
+packaging==24.1
+pillow==10.4.0
+psycopg2-binary==2.9.9
+python-dotenv==1.0.1
+sqlparse==0.5.1
+typing_extensions==4.12.2
+whitenoise==6.7.0
