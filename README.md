@@ -41,13 +41,13 @@
   ![Github](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
   ![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
 
-<!-- <p>
+<p>
 <details open>
   <summary>Deployed Link</summary>
-  <a href="#"
+  <a href="https://ffxiv-recruitment-tracker-f57ab5de9bef.herokuapp.com/"
     >FFXIV: Recruitment Tracker</a
   >
-</details> -->
+</details>
 
 ## :construction: Upcoming Features
 
