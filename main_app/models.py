@@ -139,14 +139,6 @@ class Player(models.Model):
         return f"{self.name} is a {self.get_role_display()} on {self.get_server_display()}"
     def get_absolute_url(self):
         return reverse('player_detail', kwargs={'player_id': self.id})
-    # def save(self, *args, **kwargs):
-    #     super().save(*args, **kwargs)
-    #     if self.player_img:
-    #         img = Image.open(self.player_img.path)
-    #         if img.height > 275 or img.width > 275:
-    #             output_size = (271, 271)
-    #             img.thumbnail(output_size)
-    #             img.save(self.player_img.path)
 
 class Job(models.Model):
     player = models.ForeignKey(Player, on_delete=models.CASCADE)
